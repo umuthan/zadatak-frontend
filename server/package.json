@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Server actions for Zadatak Frontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/umuthan/zadatak-frontend.git"
+  },
+  "author": "Umuthan Uyan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/umuthan/zadatak-frontend/issues"
+  },
+  "homepage": "https://github.com/umuthan/zadatak-frontend#readme"
+}

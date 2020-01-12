@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 
 import Home from './Pages/Home';
+import Contact from './Pages/Contact';
 
 class App extends Component {
 
@@ -24,12 +25,18 @@ class App extends Component {
                 <li>
                   <Link to="/">Home</Link>
                 </li>
+                <li>
+                  <Link to="/contact">Contact Us</Link>
+                </li>
               </ul>
             </nav>
           </header>
 
           <section>
             <Switch>
+              <Route path="/contact">
+                <Contact />
+              </Route>
               <Route path="/">
                 <Home />
               </Route>

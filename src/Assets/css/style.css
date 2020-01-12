@@ -10,6 +10,10 @@ body {
   margin: auto;
 }
 
+header {
+  border-bottom: 1px solid #ccc;
+}
+
 header nav {
   padding: 10px 0;
 }
@@ -37,4 +41,49 @@ article img {
 article p {
   line-height: 22px;
   padding-bottom: 20px;
+}
+
+form {
+  display: flex;
+  max-width: 350px;
+  margin:auto;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+form label {
+  margin: 20px 0;
+  max-width: 350px;
+}
+
+form input,
+form textarea {
+  margin-top: 10px;
+  width: 330px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+form textarea {
+  height: 100px;
+}
+
+form input[type="submit"] {
+  width: 100px;
+}
+
+p.response {
+  width: 330px;
+  padding: 10px;
+  margin: 20px auto 0 auto;
+  white-space: pre;
+}
+
+p.alert {
+  border: 2px solid #a70000;
+}
+
+p.success {
+  border: 2px solid #00a73b;
 }
