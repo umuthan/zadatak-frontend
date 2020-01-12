@@ -1,0 +1,39 @@
+@import './reset.css';
+
+body {
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 1024px;
+  margin: auto;
+}
+
+header nav {
+  padding: 10px 0;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+header nav ul li a {
+  font-size: 22px;
+  text-decoration: none;
+  color: #000;
+}
+
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+article img {
+  padding-bottom: 20px;
+}
+
+article p {
+  line-height: 22px;
+  padding-bottom: 20px;
+}

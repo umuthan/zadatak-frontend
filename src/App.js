@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './Assets/css/style.css';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,26 +9,35 @@ import {
   Link
 } from "react-router-dom";
 
+import Home from './Pages/Home';
+
 class App extends Component {
 
   render(){
 
     return (
+      <div className="container">
+        <Router>
+          <header>
+            <nav>
+              <ul>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+              </ul>
+            </nav>
+          </header>
 
-      <Router>
-        <header>
-          <nav>
-            
-          </nav>
-        </header>
+          <section>
+            <Switch>
+              <Route path="/">
+                <Home />
+              </Route>
+            </Switch>
+          </section>
 
-        <section>
-          <Switch>
-
-          </Switch>
-        </section>
-    </Router>
-
+        </Router>
+      </div>
     );
 
   }
