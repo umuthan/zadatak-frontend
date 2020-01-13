@@ -1,3 +1,11 @@
+/**
+ * Zadatak Frontend - App
+ * https://github.com/umuthan/zadatak-frontend
+ *
+ * Author: Umuthan Uyan
+ *
+ */
+
 import React, { Component } from 'react';
 
 import './Assets/css/style.css';

@@ -1,3 +1,11 @@
+/**
+ * Zadatak Frontend - Home Page
+ * https://github.com/umuthan/zadatak-frontend
+ *
+ * Author: Umuthan Uyan
+ *
+ */
+
 import React, { Component } from 'react';
 
 class Home extends Component {

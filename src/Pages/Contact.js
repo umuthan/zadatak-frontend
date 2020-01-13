@@ -1,3 +1,11 @@
+/**
+ * Zadatak Frontend - Contact Page
+ * https://github.com/umuthan/zadatak-frontend
+ *
+ * Author: Umuthan Uyan
+ *
+ */
+
 import React, { Component } from 'react';
 
 class Contact extends Component {
@@ -21,43 +29,34 @@ class Contact extends Component {
 
   handleFormSubmit = (event) => {
 
-    let response = '';
-    let responseClassName = '';
+    const creds = require('../config');
 
     let email = event.target.email.value;
-    let emailCheck = false;
-
-    if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      emailCheck = true;
-    } else {
-      response = 'Must have a valid email address\n';
-      responseClassName = 'alert';
-    }
-
     let message = event.target.message.value;
-    let messageCheck = false;
 
-    if(message.length > 30) {
-      messageCheck = true;
-    } else {
-      response += 'The message must be longer than 30 characters\n';
-      responseClassName = 'alert';
-    }
+    const requestURL = creds.REQUESTURL;
 
-    if( messageCheck && emailCheck === true) {
-      response = 'Your message has been sent!';
-      responseClassName = 'success';
+    fetch(requestURL, {
+        method: 'post',
+        body: JSON.stringify({
+          "email": email,
+          "message": message
+        }),
+        headers: {"Content-Type": "application/json"}
+    }).then(response => response.json())
+      .then(resData => {
 
-      event.target.email.value = '';
-      event.target.message.value = '';
-    }
+        this.setState({
+          response: resData.response,
+          responseClassName: resData.responseClassName
+        });
 
-    this.setState({
-      response: response,
-      responseClassName: responseClassName
+        if(resData.responseClassName === 'success') document.getElementById("contactForm").reset();
+
     });
 
     event.preventDefault();
+
   }
 
   render() {
@@ -74,7 +73,7 @@ class Contact extends Component {
             {response}
           </p>
         ) }
-        <form onSubmit={this.handleFormSubmit} type="POST">
+        <form id="contactForm" onSubmit={this.handleFormSubmit} type="POST">
           <label>E-mail
             <input name="email" type="text" />
           </label>

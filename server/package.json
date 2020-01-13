@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/umuthan/zadatak-frontend/issues"
   },
-  "homepage": "https://github.com/umuthan/zadatak-frontend#readme"
+  "homepage": "https://github.com/umuthan/zadatak-frontend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "expressjs": "^1.0.1"
+  }
 }
