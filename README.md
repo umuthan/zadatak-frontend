@@ -6,7 +6,7 @@ You can modify port and other configs in config.js located in root directory and
 
 In the server directory, you can run:
 
-### `nodejs server.js`
+### `node server.js`
 
 ## Starting App
 
