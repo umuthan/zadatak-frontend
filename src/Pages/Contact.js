@@ -27,6 +27,15 @@ class Contact extends Component {
 
   }
 
+  updateMessage = (response, responseClassName) => {
+
+    this.setState({
+      response: response,
+      responseClassName: responseClassName
+    });
+
+  }
+
   handleFormSubmit = (event) => {
 
     const creds = require('../config');
@@ -46,12 +55,16 @@ class Contact extends Component {
     }).then(response => response.json())
       .then(resData => {
 
-        this.setState({
-          response: resData.response,
-          responseClassName: resData.responseClassName
-        });
+        this.updateMessage(resData.response, resData.responseClassName);
 
         if(resData.responseClassName === 'success') document.getElementById("contactForm").reset();
+
+    }).catch(error => {
+
+        let response = 'There was an error on server-side.\nPlease check your Nodejs Server';
+        let responseClassName = 'alert';
+
+        this.updateMessage(response, responseClassName);
 
     });
 
